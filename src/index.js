@@ -3,40 +3,36 @@ seeing that eval is used, check is required if integer
  */
 class SmartCalculator {
     constructor(initialValue) {
-        if(!Number.isInteger(initialValue)){
-            throw "sorry but you can use only integers";
-        }
+        this.checkInput(initialValue);
         this.value = initialValue;
     }
-    add(number) {
+    checkInput(number){
         if(!Number.isInteger(number)){
             throw "sorry but you can use only integers";
         }
+    }
+    add(number) {
+        this.checkInput(number);
         this.value = (this.value + '+' +  number);
         return this;
     }
     subtract(number) {
-        if(!Number.isInteger(number)){
-            throw "sorry but you can use only integers";
-        }
+        this.checkInput(number);
         this.value = (this.value + '-' +  number);
         return this;
     }
     multiply(number) {
-        if(!Number.isInteger(number)){
-            throw "sorry but you can use only integers";
-        }
+        this.checkInput(number);
         this.value = (this.value + '*' +  number);
         return this;
     }
     devide(number) {
-        if(!Number.isInteger(number)){
-            throw "sorry but you can use only integers";
-        }
+        this.checkInput(number);
         this.value = (this.value + '/' +  number);
         return this;
     }
     pow(number) {
+        this.checkInput(number);
         this.value = (this.value + '**' +  number);
         return this;
     }
